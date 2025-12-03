@@ -9,7 +9,7 @@
 int main() {
     // Leer el tamaño desde un archivo de texto
     int SIZE = 0;
-    std::ifstream input_file("./languages/Tiempo.txt");  // Nombre del archivo de texto
+    std::ifstream input_file("./languages/Elementos.txt");  // Nombre del archivo de texto
 
     if (input_file.is_open()) {
         input_file >> SIZE;  // Leer el valor del archivo

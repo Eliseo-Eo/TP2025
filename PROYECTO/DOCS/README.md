@@ -31,6 +31,7 @@ Software Necesario. Asegúrate de tener instalados los siguientes programas y he
 Este proyecto utiliza las siguientes dependencias en Rust:
 
 - `rayon`: Para la paralelización de tareas.
+- `Arc<Mutex<>>`: Para asegurar que los resultados se registren de forma segura, evitando condiciones de carrera al escribir en el CSV.
 - `sysinfo`: Para obtener información del sistema como la memoria y la CPU.
 - `rand`: Para generar números aleatorios.
 - `std`: Para funciones estándar de Rust como manejo de archivos y ejecución de comandos del sistema.
@@ -46,7 +47,7 @@ Asegúrate de tener los archivos de prueba en el directorio adecuado:
     ./languages/Prueba.kt (para Kotlin)
     ./languages/Prueba.cpp (para C++)
     ./languages/Prueba.c (para C)
-    ./languages/Tiempo.txt (archivo de tamaño para Rust)
+    ./languages/Elementos.txt (archivo de tamaño para Rust)
 
 Si no tienes estos archivos, puedes crearlos o adaptar los scripts de prueba para tus necesidades.
 
@@ -72,6 +73,28 @@ Memoria inicial: 1,024,000 bytes, Memoria final: 1,048,576 bytes, CPU inicial: 3
 El código se encarga de ejecutar las pruebas en cada lenguaje, medir el uso de memoria y CPU antes y después de la ejecución, y luego mostrar los resultados. Medición de memoria y CPU: El programa usa las librerías sys_info y sysinfo para obtener estadísticas del sistema, como la memoria total y libre, y el porcentaje de uso de la CPU. Ejecución de pruebas: Dependiendo del lenguaje seleccionado (Python, Kotlin, Rust, C++, C), el programa ejecuta un script o programa y mide el tiempo de ejecución.
 Paralelización: Utiliza la librería rayon para ejecutar las pruebas de forma paralela, acelerando el proceso de comparación entre los lenguajes.
 Resultados: Los resultados de cada prueba se imprimen en la terminal, mostrando la memoria utilizada, el uso de la CPU y el tiempo de ejecución.
+
+### Registro de Resultados
+
+El programa guarda automáticamente los resultados de cada ejecución en un archivo CSV dentro de `./languages/Datos_Almacenados.csv`.  
+Cada ejecución añade nuevos datos al archivo, permitiendo mantener un historial de pruebas sin sobrescribir información anterior.  
+
+El CSV contiene las siguientes columnas:
+
+- Lenguaje
+- Tiempo de ejecución (segundos)
+- Memoria inicial (bytes)
+- Memoria final (bytes)
+- CPU inicial (%)
+- CPU final (%)
+- Cantidad de elementos procesados
+- Fecha y hora de la prueba
+
+### Ejemplo de CSV
+
+Lenguaje,Tiempo(s),Memoria Inicial,Memoria Final,CPU Inicial,CPU Final,Cantidad de Elementos,Fecha/Hora Prueba
+Python,0.4321,1024000,1048576,2.3,3.2,10,2025-12-02 18:00:00
+Kotlin,0.3214,1024000,1048576,3.0,4.1,10,2025-12-02 18:00:01
 
 ### Cómo Personalizar
 

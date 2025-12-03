@@ -5,7 +5,7 @@ import java.io.File
 // Función para leer el número de elementos desde el archivo Tiempo.txt
 fun readElementCount(): Int? {
     return try {
-        val file = File("./languages/Tiempo.txt")
+        val file = File("./languages/Elementos.txt")
         val content = file.readText().trim()
         content.toInt()
     } catch (e: Exception) {

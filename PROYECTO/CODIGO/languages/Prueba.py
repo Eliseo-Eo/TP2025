@@ -4,7 +4,7 @@ import time
 # Leer el número de elementos desde el archivo "Tiempo.txt"
 def read_element_count():
     try:
-        with open("./languages/Tiempo.txt", "r") as file:
+        with open("./languages/Elementos.txt", "r") as file:
             # Leer el número de elementos desde el archivo
             count = int(file.read().strip())  # Convertir el contenido a un entero
             return count

@@ -8,7 +8,7 @@ int compare(const void *a, const void *b) {
 
 int main() {
     // Leer el tamaño desde el archivo Tiempo.txt
-    FILE *file = fopen("./languages/Tiempo.txt", "r");
+    FILE *file = fopen("./languages/Elementos.txt", "r");
     if (file == NULL) {
         printf("No se pudo abrir el archivo Tiempo.txt.\n");
         return 1;
