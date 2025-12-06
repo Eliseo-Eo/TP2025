@@ -1,1 +1,1 @@
-/home/cheo/Documentos/MAESTRIA/SM1/TP2025/TP2025/PROYECTO/CODIGO/target/debug/PROYECTO_FINAL: /home/cheo/Documentos/MAESTRIA/SM1/TP2025/TP2025/PROYECTO/CODIGO/src/main.rs
+/home/cheo/Documentos/PROYECTO/CODIGO/target/debug/PROYECTO_FINAL: /home/cheo/Documentos/PROYECTO/CODIGO/src/main.rs
